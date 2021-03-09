@@ -6,10 +6,6 @@ import static java.lang.Math.pow;
 
 public class Arccos {
 
-    public static String get() {
-        return "Hello JUnit 5";
-    }
-
     public static double arccos(double val) {
         if (val > 1 || val < -1) {
             throw new IllegalArgumentException();
@@ -18,7 +14,6 @@ public class Arccos {
         for (int n = 0; n < 10; n++) {
             double num = pow(val, 2 * n + 1) * factorial(2 * n) /
                     (pow(4, n) * pow(factorial(n), 2) * (2 * n + 1));
-//            System.out.println(n + " - " + num);
             result -= num;
         }
         return round(result, 2);

@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,8 +19,8 @@ public class ArccosTest {
     private static final ArrayList<Double> testRightOutsideValues = new ArrayList<>();
     private static final ArrayList<Double> testLeftOutsideValues = new ArrayList<>();
 
-    @BeforeAll
-    static void setUp() {
+    @BeforeEach
+    void setUp() {
         //right side check
         testRightInsideValues.put(0d, 1.0);
         testRightInsideValues.put(0.66, 0.79);
@@ -80,4 +83,12 @@ public class ArccosTest {
                 (value) -> assertThrows(IllegalArgumentException.class,
                         () -> Arccos.arccos(value)));
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/arccosValues.csv", delimiter = ';')
+    public void testFile(double expected, double x) {
+        assertEquals(expected, Arccos.arccos(x));
+    }
+
+
 }
