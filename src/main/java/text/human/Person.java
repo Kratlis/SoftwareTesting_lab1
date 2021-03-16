@@ -20,13 +20,6 @@ public class Person {
         System.out.println("Here is a " + this);
     }
 
-    public Person(String name) {
-        this();
-        this.name = name;
-        System.out.println("It is " + this);
-        thingsAround = new ArrayList<>();
-    }
-
     public Head getHead() {
         return head;
     }
@@ -48,6 +41,8 @@ public class Person {
         System.out.println(this + " collapsed in the chair " + chair);
         chair.setOwner(this);
         setFeeling(Feeling.RELAXED);
+        System.out.println("Now the chair is " + chair);
+
     }
 
     @Override
@@ -61,16 +56,6 @@ public class Person {
 
     public void putFeet(Furniture furniture) {
         System.out.println("Feet of " + this + " are on the " + furniture);
-    }
-
-    public void pickInTeeth(Hand hand, Head head) {
-        setFeeling(Feeling.CONCENTRATED);
-        System.out.println(this + " is picking with " + hand + " in the teeth of " + head);
-        if (!head.getTeeth().areClean()) {
-            cleanTeeth(head.getTeeth());
-        }
-        setFeeling(Feeling.SATISFIED);
-        System.out.println(this + " finished picking with " + hand + " in the teeth of " + head);
     }
 
     public void smile(Head head) {
@@ -92,10 +77,6 @@ public class Person {
         dropJaw();
     }
 
-    public ArrayList<Thing> getThingsAround() {
-        return thingsAround;
-    }
-
     public Feeling getFeeling(){
         return head.getFeeling();
     }
@@ -113,7 +94,7 @@ public class Person {
     protected void cleanTeeth(Teeth teeth) {
         while (!teeth.areClean()) {
             double dirty = teeth.getDirty();
-            dirty -= Math.random() * 3;
+            dirty -= Math.random();
             if (dirty <= 0) {
                 teeth.setDirty(0);
                 teeth.setClean(true);

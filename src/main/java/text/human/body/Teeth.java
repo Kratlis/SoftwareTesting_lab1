@@ -17,9 +17,6 @@ public class Teeth extends BodyPart {
 
     @Override
     public String toString() {
-        if (name != null) {
-            return (isClean ? "Clean Teeth " + name : "Dirty Teeth " + name);
-        }
         return (isClean ? "Clean Teeth" : "Dirty Teeth");
     }
 
@@ -29,7 +26,7 @@ public class Teeth extends BodyPart {
 
     public void setClean(Boolean clean) {
         isClean = clean;
-        System.out.println(this+" are clean");
+        System.out.println(this + " are clean");
     }
 
     public double getDirty() {

@@ -18,15 +18,6 @@ public class TwoHeadedPerson extends Person {
         System.out.println("It is " + this);
     }
 
-    public TwoHeadedPerson(String name) {
-        super(name);
-        rightHead = new Head("right head");
-        leftHead = new Head("left head");
-        rightHand = new Hand("right hand");
-        leftHand = new Hand("left hand");
-        System.out.println("It is " + this);
-    }
-
     @Override
     public String toString() {
         return "Two-headed person" + (name != null ? " " + name : "");
@@ -40,15 +31,10 @@ public class TwoHeadedPerson extends Person {
         return leftHead;
     }
 
-    public Hand getRightHand() {
-        return rightHand;
-    }
-
     public Hand getLeftHand() {
         return leftHand;
     }
 
-    @Override
     public void pickInTeeth(Hand hand, Head head) {
         setFeeling(Feeling.CONCENTRATED, head);
         System.out.println(this + " is picking with " + hand + " in the teeth of " + head);

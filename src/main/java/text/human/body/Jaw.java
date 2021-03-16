@@ -19,9 +19,6 @@ public class Jaw extends BodyPart {
 
     @Override
     public String toString() {
-        if (name != null) {
-            return (isDropped ? "Dropped Jaw " + name : "Closed Jaw " + name);
-        }
         return (isDropped ? "Dropped Jaw" : "Closed Jaw");
     }
 }

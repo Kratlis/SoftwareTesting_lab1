@@ -4,12 +4,8 @@ import text.human.Feeling;
 
 public class Head extends BodyPart {
     protected Feeling feeling;
-    private Teeth teeth;
-    private Jaw jaw;
-
-    public Head(boolean areTeethClean) {
-        this.teeth = new Teeth(areTeethClean);
-    }
+    private final Teeth teeth;
+    private final Jaw jaw;
 
     public Head(String name) {
         super(name);

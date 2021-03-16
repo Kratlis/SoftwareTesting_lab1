@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Arccos.arccos(1));
+        System.out.println(Arccos.arccos(-1.0));
         System.out.println("------------");
 //        System.out.println(Math.acos(0.76));
 
