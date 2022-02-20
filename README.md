@@ -1,5 +1,5 @@
 # SoftwareTesting_lab1
-The first lab work on the subject PSoftware Testing
+The first lab work on the subject Software Testing
 
 ## Task
 1. Для указанной функции провести модульное тестирование разложения функции в степенной ряд. Выбрать достаточное тестовое покрытие.
